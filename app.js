@@ -6,10 +6,11 @@ var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 
 //  APP SETUPS/CONFIG
-// mongoose.connect("mongodb://localhost/restful_blog_app");
-mongoose.connect("mongodb://ike:rusty@ds159517.mlab.com:59517/blogapp");
+var url = process.env.DATABASEURL || "mongodb://localhost/restful_blog_app";
+ mongoose.connect(url);
 
-console.log(process.env.DATABASEURL);
+
+
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
