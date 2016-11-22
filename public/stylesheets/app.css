@@ -10,3 +10,7 @@ i.icon {
 #delete{
     display: inline;
 }
+
+.button{
+    margin-top: 25px;
+}
